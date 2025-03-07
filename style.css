@@ -1,0 +1,181 @@
+:root {
+    --primary-color: #3f51b5;
+    --secondary-color: #f50057;
+    --light-bg: #f8f9fa;
+    --success-color: #4caf50;
+    --warning-color: #ff9800;
+    --danger-color: #f44336;
+    --text-color: #333;
+    --border-radius: 8px;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Override de alguns estilos do Bootstrap */
+.navbar-dark.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #303f9f;
+    border-color: #303f9f;
+}
+
+.btn-success {
+    background-color: var(--success-color);
+    border-color: var(--success-color);
+}
+
+.btn-danger {
+    background-color: var(--danger-color);
+    border-color: var(--danger-color);
+}
+
+.card {
+    border-radius: var(--border-radius);
+    border: none;
+    overflow: hidden;
+}
+
+.card-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: 500;
+}
+
+.card-header.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Personalização dos elementos da lista */
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    transition: background-color 0.2s;
+}
+
+.list-group-item:hover {
+    background-color: #f1f3f9;
+}
+
+.list-group-item button {
+    margin-left: 8px;
+}
+
+/* Estilo para o item do orçamento */
+.item-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.item-details {
+    flex: 1;
+}
+
+.item-meta {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 3px;
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+}
+
+.item-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+    border: 1px solid #ddd;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .item-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .item-actions {
+        margin-top: 10px;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .item-photo {
+        margin-bottom: 10px;
+    }
+}
+
+/* Estilos adicionais para melhorar a experiência do usuário */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(63, 81, 181, 0.25);
+}
+
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+}
+
+input[type="file"] {
+    padding: 0.375rem 0.75rem;
+}
+
+/* Tooltip personalizado */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
